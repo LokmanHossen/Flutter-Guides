@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               titleMedium: const TextStyle(
-                fontFamily: 'OpenSans',
+                fontFamily: 'Quicksand',
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -102,15 +102,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Chart(recentTransactions: _recentTransactions!),
+            Chart(_recentTransactions!),
             TransactionList(_userTransactions),
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        backgroundColor: Colors.amber[400],
         onPressed: () => _startAddNewTransaction(context),
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
       ),
     );
   }
