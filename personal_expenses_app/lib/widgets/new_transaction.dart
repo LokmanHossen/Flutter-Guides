@@ -33,6 +33,7 @@ class _NewTransactionPageState extends State<NewTransactionPage> {
     Navigator.of(context).pop();
   }
 
+  // ignore: non_constant_identifier_names
   void _PresentDatePicker() {
     showDatePicker(
       context: context,
@@ -75,7 +76,7 @@ class _NewTransactionPageState extends State<NewTransactionPage> {
               //   amountInput = value;
               // },
             ),
-            Container(
+            SizedBox(
               height: 70,
               child: Row(
                 children: [
