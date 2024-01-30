@@ -27,7 +27,7 @@ class Result extends StatelessWidget {
             style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
-          ElevatedButton(
+          OutlinedButton(
             onPressed: resetHandler,
             child: const Text('Restart Quiz !'),
           ),
