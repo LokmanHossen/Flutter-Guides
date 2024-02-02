@@ -52,62 +52,69 @@ class _NewTransactionPageState extends State<NewTransactionPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            TextField(
-              decoration: const InputDecoration(labelText: 'Title'),
-              controller: _titleController,
-              onSubmitted: (_) => submitData(),
-              // onChanged: (value) {
-              //   titleInput = value;
-              // },
-            ),
-            TextField(
-              decoration: const InputDecoration(labelText: 'Amount'),
-              controller: _amountController,
-              keyboardType: TextInputType.number,
-              onSubmitted: (_) => submitData(),
-              // onChanged: (value) {
-              //   amountInput = value;
-              // },
-            ),
-            SizedBox(
-              height: 70,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(_selectedDate == null
-                        ? 'No Date Chosen'
-                        : 'pickedDate  ${DateFormat.yMd().format(_selectedDate!)}'),
-                  ),
-                  TextButton(
-                    onPressed: _PresentDatePicker,
-                    child: const Text(
-                      'Choose Date',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-                    ),
-                  ),
-                ],
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 5,
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              TextField(
+                decoration: const InputDecoration(labelText: 'Title'),
+                controller: _titleController,
+                onSubmitted: (_) => submitData(),
+                // onChanged: (value) {
+                //   titleInput = value;
+                // },
               ),
-            ),
-            ElevatedButton(
-              style: TextButton.styleFrom(backgroundColor: Colors.purple),
-              onPressed: submitData,
-              child: const Text('Add Transaction'),
-              // {
-              // addTx(
-              //   titleController.text,
-              //   double.parse(amountController.text),
-              // );
-              // },
-            )
-          ],
+              TextField(
+                decoration: const InputDecoration(labelText: 'Amount'),
+                controller: _amountController,
+                keyboardType: TextInputType.number,
+                onSubmitted: (_) => submitData(),
+                // onChanged: (value) {
+                //   amountInput = value;
+                // },
+              ),
+              SizedBox(
+                height: 70,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(_selectedDate == null
+                          ? 'No Date Chosen'
+                          : 'pickedDate  ${DateFormat.yMd().format(_selectedDate!)}'),
+                    ),
+                    TextButton(
+                      onPressed: _PresentDatePicker,
+                      child: const Text(
+                        'Choose Date',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ElevatedButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                onPressed: submitData,
+                child: const Text('Add Transaction'),
+                // {
+                // addTx(
+                //   titleController.text,
+                //   double.parse(amountController.text),
+                // );
+                // },
+              )
+            ],
+          ),
         ),
       ),
     );
