@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget txListWidget,
   ) {
     return [
-      Container(
+      SizedBox(
         height: (mediaQuery.size.height -
                 appBar.preferredSize.height -
                 mediaQuery.padding.top) *
