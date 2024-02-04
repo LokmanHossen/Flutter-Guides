@@ -33,61 +33,62 @@ class TransactionList extends StatelessWidget {
               ],
             );
           })
-        : ListView.builder(
-            itemBuilder: (context, index) {
-              // return Card(
-              //   child: Row(
-              //     children: [
-              //       Container(
-              //         margin: const EdgeInsets.symmetric(
-              //           vertical: 15,
-              //           horizontal: 15,
-              //         ),
-              //         decoration: BoxDecoration(
-              //           border: Border.all(
-              //             color: Theme.of(context).primaryColor,
-              //             width: 2,
-              //           ),
-              //         ),
-              //         padding: const EdgeInsets.all(10),
-              //         child: Text(
-              //           '${transaction[index].amount.toStringAsFixed(2)} TK',
-              //           // tx.amount.toString(),
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.bold,
-              //             fontSize: 15,
-              //             color: Theme.of(context).primaryColor,
-              //           ),
-              //         ),
-              //       ),
-              //       Column(
-              //         crossAxisAlignment: CrossAxisAlignment.start,
-              //         children: [
-              //           Text(
-              //             transaction[index].title,
-              //             style: Theme.of(context).textTheme.titleMedium,
-              //           ),
-              //           Text(
-              //             DateFormat.yMMMMEEEEd()
-              //                 .format(transaction[index].date),
-              //             // tx.date.toString(),
-              //             style: const TextStyle(
-              //               color: Colors.grey,
-              //               fontSize: 12,
-              //             ),
-              //           ),
-              //         ],
-              //       )
-              //     ],
-              //   ),
-              // );
-              return TransactionItem(
-                transaction: transaction[index],
-                deleteTx: deleteTx,
-              );
-            },
-            itemCount: transaction.length,
-            // children: transaction.map((tx) {}).toList(),
+        : ListView(
+            children: transaction
+                .map((tx) => TransactionItem(
+                      key: ValueKey(tx.id),
+                      transaction: tx,
+                      deleteTx: deleteTx,
+                    ))
+                .toList(),
           );
+    // return Card(
+    //   child: Row(
+    //     children: [
+    //       Container(
+    //         margin: const EdgeInsets.symmetric(
+    //           vertical: 15,
+    //           horizontal: 15,
+    //         ),
+    //         decoration: BoxDecoration(
+    //           border: Border.all(
+    //             color: Theme.of(context).primaryColor,
+    //             width: 2,
+    //           ),
+    //         ),
+    //         padding: const EdgeInsets.all(10),
+    //         child: Text(
+    //           '${transaction[index].amount.toStringAsFixed(2)} TK',
+    //           // tx.amount.toString(),
+    //           style: TextStyle(
+    //             fontWeight: FontWeight.bold,
+    //             fontSize: 15,
+    //             color: Theme.of(context).primaryColor,
+    //           ),
+    //         ),
+    //       ),
+    //       Column(
+    //         crossAxisAlignment: CrossAxisAlignment.start,
+    //         children: [
+    //           Text(
+    //             transaction[index].title,
+    //             style: Theme.of(context).textTheme.titleMedium,
+    //           ),
+    //           Text(
+    //             DateFormat.yMMMMEEEEd()
+    //                 .format(transaction[index].date),
+    //             // tx.date.toString(),
+    //             style: const TextStyle(
+    //               color: Colors.grey,
+    //               fontSize: 12,
+    //             ),
+    //           ),
+    //         ],
+    //       )
+    //     ],
+    //   ),
+    // );
+
+    // children: transaction.map((tx) {}).toList(),
   }
 }
