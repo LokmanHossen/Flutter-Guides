@@ -15,7 +15,7 @@ class _NewTransactionPageState extends State<NewTransactionPage> {
   final _amountController = TextEditingController();
   DateTime? _selectedDate;
 
-  void submitData() {
+  void _submitData() {
     if (_amountController.text.isEmpty) {
       return;
     }
@@ -68,7 +68,7 @@ class _NewTransactionPageState extends State<NewTransactionPage> {
               TextField(
                 decoration: const InputDecoration(labelText: 'Title'),
                 controller: _titleController,
-                onSubmitted: (_) => submitData(),
+                onSubmitted: (_) => _submitData(),
                 // onChanged: (value) {
                 //   titleInput = value;
                 // },
@@ -77,7 +77,7 @@ class _NewTransactionPageState extends State<NewTransactionPage> {
                 decoration: const InputDecoration(labelText: 'Amount'),
                 controller: _amountController,
                 keyboardType: TextInputType.number,
-                onSubmitted: (_) => submitData(),
+                onSubmitted: (_) => _submitData(),
                 // onChanged: (value) {
                 //   amountInput = value;
                 // },
@@ -104,7 +104,7 @@ class _NewTransactionPageState extends State<NewTransactionPage> {
               ),
               ElevatedButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.purple),
-                onPressed: submitData,
+                onPressed: _submitData,
                 child: const Text('Add Transaction'),
                 // {
                 // addTx(
