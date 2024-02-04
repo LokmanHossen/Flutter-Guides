@@ -6,8 +6,8 @@
 
 
 <div> 
-<img src = "flutter_quiz_app/assets/flutter_01.png" width = "300" height = "550"> <img src = "flutter_quiz_app/assets/flutter_02.png" width = "300" height = "550">
-<img src = "flutter_quiz_app/assets/flutter_03.png" width = "300" height = "550"> <img src = "flutter_quiz_app/assets/flutter_04.png" width = "300" height = "550">
+<img src = "flutter_quiz_app/assets/flutter_01.png" width = "250" height = "500"> <img src = "flutter_quiz_app/assets/flutter_02.png" width = "250" height = "500">
+<img src = "flutter_quiz_app/assets/flutter_03.png" width = "250" height = "500"> <img src = "flutter_quiz_app/assets/flutter_04.png" width = "250" height = "500"">
 </div>
 
 <html>
@@ -18,6 +18,6 @@
 
 
 <div> 
-<img src = "personal_expenses_app/assets/Screenshot/flutter_01.png" width = "300" height = "550"> <img src = "personal_expenses_app/assets/Screenshot/flutter_02.png" width = "300" height = "550">
-<img src = "personal_expenses_app/assets/Screenshot/flutter_03.png" width = "300" height = "550"> <img src = "personal_expenses_app/assets/Screenshot/flutter_04.png" width = "300" height = "550">
+<img src = "personal_expenses_app/assets/Screenshot/flutter_01.png" width = "250" height = "500"> <img src = "personal_expenses_app/assets/Screenshot/flutter_02.png" width = "250" height = "500">
+<img src = "personal_expenses_app/assets/Screenshot/flutter_03.png" width = "250" height = "500"> <img src = "personal_expenses_app/assets/Screenshot/flutter_04.png" width = "250" height = "500">
 </div>
