@@ -22,9 +22,9 @@ class _FiltersScreenState extends State<FiltersScreen> {
   @override
   void initState() {
     _glutenFree = widget.currentFilters['gluter'] ?? false;
-    _lactoseFree = widget.currentFilters['lactose'] ?? false ;
-    _vegan = widget.currentFilters['vegan'] ?? false ;
-    _vegetarian = widget.currentFilters['vegetarian'] ?? false ;
+    _lactoseFree = widget.currentFilters['lactose'] ?? false;
+    _vegan = widget.currentFilters['vegan'] ?? false;
+    _vegetarian = widget.currentFilters['vegetarian'] ?? false;
 
     super.initState();
   }
@@ -61,6 +61,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   'vegetarian': _vegetarian,
                 };
                 widget.saveFilters(selectedFilters);
+                print('SaveFilters {$selectedFilters}');
               },
             )
           ],
@@ -103,18 +104,6 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     },
                   ),
                   _buildSwitchListTile(
-                    'Vegetarian-free',
-                    'Only inclutde Vegetarian-free meals',
-                    _vegetarian,
-                    (newValue) {
-                      setState(
-                        () {
-                          _vegetarian = newValue;
-                        },
-                      );
-                    },
-                  ),
-                  _buildSwitchListTile(
                     'Vegan-free',
                     'Only inclutde Vegan-free meals',
                     _vegan,
@@ -122,6 +111,18 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       setState(
                         () {
                           _vegan = newValue;
+                        },
+                      );
+                    },
+                  ),
+                    _buildSwitchListTile(
+                    'Vegetarian-free',
+                    'Only inclutde Vegetarian-free meals',
+                    _vegetarian,
+                    (newValue) {
+                      setState(
+                        () {
+                          _vegetarian = newValue;
                         },
                       );
                     },
