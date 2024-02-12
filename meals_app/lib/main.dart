@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     'vegetarian': false,
   };
   List<Meal> _availableMeals = dummyMeals;
-  List<Meal> _favouriteMeals = [];
+  final List<Meal> _favouriteMeals = [];
 
   void _setFilters(Map<String, bool> filterData) {
     setState(() {

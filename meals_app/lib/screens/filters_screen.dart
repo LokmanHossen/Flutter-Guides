@@ -61,7 +61,6 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   'vegetarian': _vegetarian,
                 };
                 widget.saveFilters(selectedFilters);
-                print('SaveFilters {$selectedFilters}');
               },
             )
           ],
@@ -115,7 +114,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       );
                     },
                   ),
-                    _buildSwitchListTile(
+                  _buildSwitchListTile(
                     'Vegetarian-free',
                     'Only inclutde Vegetarian-free meals',
                     _vegetarian,
