@@ -16,34 +16,43 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     final currentQuestion = questions[0];
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            currentQuestion.text,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
+      child: Container(
+        margin: const EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              currentQuestion.text, 
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(height: 30),
-          AnswerButton(
-            answerText: currentQuestion.answer[0],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answer[1],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answer[2],
-            onTap: () {},
-          ),
-           AnswerButton(
-            answerText: currentQuestion.answer[3],
-            onTap: () {},
-          )
-        ],
+            const SizedBox(height: 30),
+            ...currentQuestion.answer.map((answer) {
+              return AnswerButton(answerText: answer, onTap: () {});
+            }),
+
+            // AnswerButton(
+            //   answerText: currentQuestion.answer[0],
+            //   onTap: () {},
+            // ),
+            // AnswerButton(
+            //   answerText: currentQuestion.answer[1],
+            //   onTap: () {},
+            // ),
+            // AnswerButton(
+            //   answerText: currentQuestion.answer[2],
+            //   onTap: () {},
+            // ),
+            //  AnswerButton(
+            //   answerText: currentQuestion.answer[3],
+            //   onTap: () {},
+            // )
+          ],
+        ),
       ),
     );
   }
