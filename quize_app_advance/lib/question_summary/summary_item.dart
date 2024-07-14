@@ -10,7 +10,7 @@ class SummaryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int questionIndex = int.tryParse(itemData['question'].toString()) ?? 0;
+    // int questionIndex = int.tryParse(itemData['question'].toString()) ?? 0;
     final isCorrectAnswer =
         itemData['user_answer'] == itemData['correct_answer'];
 
@@ -23,7 +23,8 @@ class SummaryItem extends StatelessWidget {
         children: [
           QuestionIdentifier(
             isCorrectAnswer: isCorrectAnswer,
-            questionIndex: questionIndex,
+            // questionIndex: questionIndex,
+            questionIndex: itemData['question_index'] as int,
           ),
           const SizedBox(width: 20),
           Expanded(
